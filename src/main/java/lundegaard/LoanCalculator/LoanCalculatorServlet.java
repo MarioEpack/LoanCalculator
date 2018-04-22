@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class LoanCalculatorServlet
+ * @author Mario Alina
  */
 @WebServlet("/LoanCalculatorServlet")
 public class LoanCalculatorServlet extends HttpServlet {
@@ -22,9 +23,8 @@ public class LoanCalculatorServlet extends HttpServlet {
 	private int loanTime;
     
 	
-	
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +36,7 @@ public class LoanCalculatorServlet extends HttpServlet {
 		double monthlyPayment = loanCalc.getMonthlyPayment();
 		
 		PrintWriter out = response.getWriter();
-		out.println("Monthly Payment of your selected loan is: " + monthlyPayment + "$.");
+		out.println("Monthly Payment of your selected loan would be: " + monthlyPayment + "$.");
 	}
 
 }

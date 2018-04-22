@@ -11,13 +11,11 @@
 			document.getElementById("SizeValueAtText").value = sliderValue;
 		}
 		
-		
+
 		function evalTimeSlide() {
 			var sliderValue = document.getElementById("time").value;
 			document.getElementById("TimeValueAtText").value = sliderValue;
 		}
-
-		
 	</script>
 </head>
 
@@ -26,19 +24,21 @@
 	<h3>
 		Calculate your monthly payments:
 	</h3>
-
 		Please choose the size of your loan: 
+		<!-- Post form-->
 	<form class="slidecontainer" method="post" action="monthlyPayment">
+		<!--Size Slider-->
 		<input type="range" name="size" id="size" class="slider"  step=500 value=500  min=500 max=25000  onchange="evalSizeSlide()"/><br /> 
-		<input class="textfield" id="SizeValueAtText" name="SizeValueAtText" type="text" placeholder="0" disabled/><br/>
+		<!--Size text field-->
+		<input class="textfield" id="SizeValueAtText" name="SizeValueAtText" type="text" placeholder="500" disabled/><br/>
 		
 		For how long would you like the loan to be? <br/>
+		<!--Time Slider-->
 		<input type="range" name="time" id="time" class="slider" step=1 value=12 min=12 max=96 onchange="evalTimeSlide()"/><br />
-		<input class="textfield" type="text" id="TimeValueAtText" name="TimeValueAtText" placeholder="0" disabled/>
-	
+		<!--Time text field-->
+		<input class="textfield" type="text" id="TimeValueAtText" name="TimeValueAtText" placeholder="12" disabled/>
+		<!-- Calculate submit button-->
 		<input class="submit" type="submit" value="Calculate"/>
 	</form>
-	
-
 </body>
 </html>

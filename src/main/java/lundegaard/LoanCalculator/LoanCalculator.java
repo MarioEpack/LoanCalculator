@@ -3,6 +3,12 @@ package lundegaard.LoanCalculator;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * @author Mario Alina
+ * This class calculates the monthly payment of the selected loan.
+ */
+
+
 public class LoanCalculator {
 
 	
@@ -12,6 +18,10 @@ public class LoanCalculator {
     private int timePeriod; // in months
 
     
+    /**
+     * parameter loan for the size of the loan,
+     * parameter timePeriod to specify for how long is the loan being taken
+     */
     public LoanCalculator(double loan, int timePeriod) {
         this.loan = loan;
         this.timePeriod = timePeriod;

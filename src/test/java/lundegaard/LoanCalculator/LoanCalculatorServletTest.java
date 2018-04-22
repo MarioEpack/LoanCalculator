@@ -17,17 +17,17 @@ public class LoanCalculatorServletTest extends Mockito {
 
 	private HttpServletRequest request;
 	private HttpServletResponse response;
-	private String POSTMSG = "Monthly Payment of your selected loan is: 88.85$.";
+	private String POSTMSG = "Monthly Payment of your selected loan would be: 88.85$.";
 	
 	@Before
 	public void setUp() throws Exception {
-		this.request = mock(HttpServletRequest.class);
-		this.response = mock(HttpServletResponse.class);
+	    this.request = mock(HttpServletRequest.class);
+	    this.response = mock(HttpServletResponse.class);
 	}
 
-	@Test
+	@Test 
 	public void testMonthlyPayment() throws IOException, ServletException {
-		when(request.getParameter("size")).thenReturn("1000");
+	    when(request.getParameter("size")).thenReturn("1000");
 	    when(request.getParameter("time")).thenReturn("12");
 	    
 	    
@@ -40,7 +40,7 @@ public class LoanCalculatorServletTest extends Mockito {
 	    servlet.doPost(request, response);
 	    
 	    String result = sw.getBuffer().toString().trim();
-	 // TO DO, rework this test   
+	 
 	    
 	    assertEquals(result, this.POSTMSG);
 	    
