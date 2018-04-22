@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href=stylesheet.css rel="stylesheet" type="text/css">
+<title>Loan Calculator</title>
+	
+	<!-- Used to show the current values of range sliders -->
+	<script>
+		function evalSizeSlide() {
+			var sliderValue = document.getElementById("size").value;
+			document.getElementById("SizeValueAtText").value = sliderValue;
+		}
+		
+		
+		function evalTimeSlide() {
+			var sliderValue = document.getElementById("time").value;
+			document.getElementById("TimeValueAtText").value = sliderValue;
+		}
+
+		
+	</script>
+</head>
+
+<body>
+
+	<h3>
+		Calculate your monthly payments:
+	</h3>
+
+		Please choose the size of your loan: 
+	<form class="slidecontainer" method="post" action="monthlyPayment">
+		<input type="range" name="size" id="size" class="slider"  step=500 value=500  min=500 max=25000  onchange="evalSizeSlide()"/><br /> 
+		<input class="textfield" id="SizeValueAtText" name="SizeValueAtText" type="text" placeholder="0" disabled/><br/>
+		
+		For how long would you like the loan to be? <br/>
+		<input type="range" name="time" id="time" class="slider" step=1 value=12 min=12 max=96 onchange="evalTimeSlide()"/><br />
+		<input class="textfield" type="text" id="TimeValueAtText" name="TimeValueAtText" placeholder="0" disabled/>
+	
+		<input class="submit" type="submit" value="Calculate"/>
+	</form>
+	
+
+</body>
+</html>
